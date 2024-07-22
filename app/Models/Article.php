@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -55,6 +56,13 @@ class Article extends Model
     public function company()
     {
         return $this->belongsTo(Company::class);
+    }
+
+    protected function createdAt(): Attribute
+    {
+        return Attribute::make(
+            get: fn (int|string $value) => date('d-m-Y H:i:s A', strtotime($value)),
+        );
     }
 }
 
