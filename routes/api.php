@@ -14,7 +14,8 @@ Route::controller(AuthController::class)->group(function(){
          
 Route::middleware('auth:sanctum')->group( function () {
     Route::apiResource('companies', CompanyController::class);
-    Route::apiResource('users', UserController::class);
     Route::apiResource('articles', ArticleController::class);
+    Route::get('/users/profile', [UserController::class, 'profile']);
+    Route::apiResource('users', UserController::class);
 });
 

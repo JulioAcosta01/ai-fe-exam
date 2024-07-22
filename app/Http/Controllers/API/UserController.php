@@ -10,6 +10,38 @@ class UserController extends BaseController
 {
     /**
      * @OA\Get(
+     *      path="/api/users/profile",
+     *      summary="Get the authenticated user",
+     *      tags={"Users"},
+     *      security={{"bearerAuth":{}}},
+     *      @OA\Response(
+     *          response=201,
+     *          description="Success",
+     *          @OA\JsonContent(
+     *              @OA\Property(property="success", type="boolean", example="true"),
+     *              @OA\Property(property="data", ref="#/components/schemas/User"),
+     *              @OA\Property(property="message", type="string", example="User retrieved successfully."),
+     *          ),
+     *      ),
+     * )
+     */
+    public function profile(): JsonResponse
+    { 
+        $user =  auth('sanctum')->user();
+
+        return $this->sendResponse(
+            [
+                'success' => true,
+                'data' => $user,
+            ], 
+            'User retrieved successfully.',
+            201
+        );
+    }
+
+
+    /**
+     * @OA\Get(
      *     path="/api/users",
      *     summary="Get all users",
      *     tags={"Users"},

@@ -1016,6 +1016,45 @@
                 ]
             }
         },
+        "/api/users/profile": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get the authenticated user",
+                "operationId": "029311da6f907c7d629eb485ee1da859",
+                "responses": {
+                    "201": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "success": {
+                                            "type": "boolean",
+                                            "example": "true"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/User"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "User retrieved successfully."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "/api/users": {
             "get": {
                 "tags": [
