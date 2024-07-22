@@ -11,13 +11,9 @@ function getCookie(param) {
     return decodeURIComponent(cookie.split("=")[1]);
 }
 
-const baseURL =
-    window.APP_ENV === "production"
-        ? "https://archintel.rooche.net"
-        : "http://localhost:8000";
-
 const axios = Axios.create({
-    baseURL: baseURL,
+    baseURL: "http://localhost:8000",
+    // withCredentials: true,
     headers: {
         Accept: "application/json",
     },
