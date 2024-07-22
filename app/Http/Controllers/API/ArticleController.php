@@ -30,7 +30,10 @@ class ArticleController extends Controller
      */
     public function index(): JsonResponse
     {
-        $articles = Article::all();
+        $articles = Article::
+        with('writer')
+        ->with('editor')
+        ->get();
         return response()->json([
             'success' => true,
             'data' => $articles,
