@@ -30,10 +30,10 @@ class ArticleController extends Controller
      */
     public function index(): JsonResponse
     {
-        $articles = Article::
-        with('writer')
-        ->with('editor')
-        ->get();
+        $articles = Article::with('writer')
+            ->with('editor')
+            ->orderBy('createdAt', 'desc')
+            ->get();
         return response()->json([
             'success' => true,
             'data' => $articles,
@@ -82,7 +82,7 @@ class ArticleController extends Controller
      *     ),
      * )
      */
-    public function store(Request $request): JsonResponse 
+    public function store(Request $request): JsonResponse
     {
         $request->validate([
             'image' => 'nullable|url',
@@ -202,7 +202,7 @@ class ArticleController extends Controller
      *     ),
      * )
      */
-    public function update(Request $request, Article $article): JsonResponse 
+    public function update(Request $request, Article $article): JsonResponse
     {
         $request->validate([
             'image' => 'nullable|url',
@@ -270,5 +270,3 @@ class ArticleController extends Controller
         ], 200);
     }
 }
-
-    

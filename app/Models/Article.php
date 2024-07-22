@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  *    @OA\Property(property="created_at", type="string", format="date-time", example="2021-09-01T00:00:00.000000Z"),
  *    @OA\Property(property="updated_at", type="string", format="date-time", example="2021-09-01T00:00:00.000000Z"),
  * )
-*/ 
+ */
 class Article extends Model
 {
     use HasFactory;
@@ -49,7 +49,7 @@ class Article extends Model
     }
 
     public function editor()
-    { 
+    {
         return $this->belongsTo(User::class, 'editor_id');
     }
 
@@ -65,4 +65,3 @@ class Article extends Model
         );
     }
 }
-
