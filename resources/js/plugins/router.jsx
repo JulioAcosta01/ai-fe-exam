@@ -9,17 +9,17 @@ import { loadUser, verifySession } from "../api/auth";
 import { useQuery } from "@tanstack/react-query";
 
 const AuthRoute = ({ element, redirectPath = "/login" }) => {
-    const users = JSON.parse(localStorage.getItem("users"));
-    if (users) {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (!user) {
         return <Navigate to={redirectPath} replace />;
     }
     return element;
 };
 
 const GuestRoute = ({ element, redirectPath = "/dashboard" }) => {
-    const users = JSON.parse(localStorage.getItem("users"));
-    console.log(users);
-    if (!users) {
+    const user = JSON.parse(localStorage.getItem("user"));
+    console.log(user);
+    if (user) {
         return <Navigate to={redirectPath} replace />;
     }
     return element;
