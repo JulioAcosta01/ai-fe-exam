@@ -13,6 +13,7 @@ class CompanyController extends BaseController
      *     path="/api/companies",
      *     summary="Get all companies",
      *     tags={"Companies"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\Response(
      *         response=201,
      *         description="Success",
@@ -35,6 +36,7 @@ class CompanyController extends BaseController
      *     path="/api/companies",
      *     summary="Create a new company",
      *     tags={"Companies"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(
@@ -82,6 +84,7 @@ class CompanyController extends BaseController
      *     path="/api/companies/{id}",
      *     summary="Get a company",
      *     tags={"Companies"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -112,6 +115,7 @@ class CompanyController extends BaseController
      *     path="/api/companies/{id}",
      *     summary="Update a company",
      *     tags={"Companies"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -168,6 +172,7 @@ class CompanyController extends BaseController
      *     path="/api/companies/{id}",
      *     summary="Delete a company",
      *     tags={"Companies"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",

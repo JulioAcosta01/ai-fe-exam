@@ -14,6 +14,7 @@ class ArticleController extends Controller
      *     path="/api/articles",
      *     summary="Get all articles",
      *     tags={"Articles"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\Response(
      *         response=200,
      *         description="Success",
@@ -42,6 +43,7 @@ class ArticleController extends Controller
      *     path="/api/articles",
      *     summary="Create a new article",
      *     tags={"Articles"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(
@@ -105,6 +107,7 @@ class ArticleController extends Controller
      *     path="/api/articles/{id}",
      *     summary="Get a specific article",
      *     tags={"Articles"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -149,6 +152,7 @@ class ArticleController extends Controller
      *     path="/api/articles/{id}",
      *     summary="Update a specific article",
      *     tags={"Articles"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -223,6 +227,7 @@ class ArticleController extends Controller
      *     path="/api/articles/{id}",
      *     summary="Delete a specific article",
      *     tags={"Articles"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",

@@ -13,6 +13,7 @@ class UserController extends BaseController
      *     path="/api/users",
      *     summary="Get all users",
      *     tags={"Users"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\Response(
      *         response=201,
      *         description="Success",
@@ -35,6 +36,7 @@ class UserController extends BaseController
      *     path="/api/users",
      *     summary="Create a new user",
      *     tags={"Users"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(
@@ -84,6 +86,7 @@ class UserController extends BaseController
      *     path="/api/users/{id}",
      *     summary="Get a user",
      *     tags={"Users"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -114,6 +117,7 @@ class UserController extends BaseController
      *     path="/api/users/{id}",
      *     summary="Update a user",
      *     tags={"Users"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -172,6 +176,7 @@ class UserController extends BaseController
      *     path="/api/users/{id}",
      *     summary="Delete a user",
      *     tags={"Users"},
+     *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",

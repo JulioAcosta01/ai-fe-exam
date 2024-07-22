@@ -11,8 +11,7 @@ namespace App\Http\Controllers;
  * * @OA\SecurityScheme( 
         * type="http", 
         * securityScheme="bearerAuth", 
-        * scheme="bearer", 
-        * bearerFormat="JWT" 
+        * scheme="bearer"
 * ),
  * @OA\PathItem(path="/api")
  */
