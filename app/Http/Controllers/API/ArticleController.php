@@ -32,7 +32,7 @@ class ArticleController extends Controller
     {
         $articles = Article::with('writer')
             ->with('editor')
-            ->orderBy('createdAt', 'desc')
+            ->orderBy('created_at', 'desc')
             ->get();
         return response()->json([
             'success' => true,
