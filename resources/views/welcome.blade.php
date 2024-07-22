@@ -12,6 +12,8 @@
     
         @viteReactRefresh
         @vite('resources/js/app.jsx') 
-                    
+        <script>
+            window.APP_ENV = "{{ env('APP_ENV') }}";
+        </script>
     </body>
 </html>
