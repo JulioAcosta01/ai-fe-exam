@@ -50,7 +50,7 @@ export default function Dashboard() {
 
                     <div className="mt-3">
                         <button className="bg-green-500 uppercase px-3 py-1.5 border-none rounded-md shadow text-white text-sm font-semibold hover:bg-green-400">
-                            Create Article
+                            <a href="add-article">Create Article</a>
                         </button>
                     </div>
 

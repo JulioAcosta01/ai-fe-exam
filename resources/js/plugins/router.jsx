@@ -7,6 +7,7 @@ import Media from "@/components/pages/Media";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { loadUser, verifySession } from "../api/auth";
 import { useQuery } from "@tanstack/react-query";
+import AddArticle from "@/components/pages/AddArticle";
 
 const AuthRoute = ({ element, redirectPath = "/login" }) => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             {
                 path: "/media",
                 element: <AuthRoute element={<Media />} />,
+            },
+            {
+                path: "/add-article",
+                element: <AuthRoute element={<AddArticle />} />,
             },
         ],
     },
