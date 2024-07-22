@@ -3,6 +3,14 @@ import "../css/app.css";
 
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Home from "./components/Home";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { RouterProvider } from "react-router-dom";
+import router from "./plugins/router";
 
-ReactDOM.createRoot(document.getElementById("app")).render(<Home />);
+const queryClient = new QueryClient();
+
+ReactDOM.createRoot(document.getElementById("app")).render(
+    <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router}></RouterProvider>
+    </QueryClientProvider>
+);
