@@ -135,7 +135,7 @@ export default function Media() {
             </div>
           </div>
         </div>
-        <div className="flex">
+        <div className="block">
           {/* CONTENT */}
           <div className="">
             <div className={`${tab === 0 ? "inline" : "hidden"} `}>
