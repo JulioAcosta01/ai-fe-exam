@@ -2,6 +2,7 @@ import {
   CloudIcon,
   ExclamationCircleIcon,
   PencilIcon,
+  PlusIcon,
   StarIcon,
   TrashIcon,
 } from "@heroicons/react/24/solid";
@@ -232,9 +233,10 @@ export default function Article() {
           <span className="font-bold text-lg">ARTICLE PAGE</span>
           <button
             onClick={() => setInsertDialog(true)}
-            className="bg-[#00695c] uppercase px-3 py-1.5 border-none rounded-md shadow text-white text-sm font-semibold hover:bg-[#00695c]/70"
+            className="inline-flex items-center bg-[#00695c] uppercase px-3 py-1.5 border-none rounded-md shadow text-white text-sm font-semibold hover:bg-[#00695c]/70"
           >
-            Create Article
+            <PlusIcon className="size-4 text-white mr-1" />
+            Create
           </button>
         </div>
         <div className="flex-1">
@@ -808,7 +810,7 @@ export default function Article() {
                             "bg-red-500 text-white px-3 py-1.5 border-none rounded-md")
                           }
                         >
-                          {loading ? "Loading ..." : "Submit"}
+                          {loading ? "Loading ..." : "Delete"}
                         </button>
                       </div>
                     </div>
