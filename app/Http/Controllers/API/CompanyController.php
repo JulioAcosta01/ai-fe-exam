@@ -27,7 +27,8 @@ class CompanyController extends BaseController
      */
     public function index(): JsonResponse
     {
-        $companies = Company::all();
+        $companies = Company::orderBy('created_at', 'desc')
+            ->get();
         return $this->sendResponse($companies, 'Companies retrieved successfully.', 201);
     }
 
