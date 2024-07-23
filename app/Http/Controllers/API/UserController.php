@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends BaseController
 {
@@ -26,14 +27,14 @@ class UserController extends BaseController
      * )
      */
     public function profile(): JsonResponse
-    { 
+    {
         $user =  auth('sanctum')->user();
 
         return $this->sendResponse(
             [
                 'success' => true,
                 'data' => $user,
-            ], 
+            ],
             'User retrieved successfully.',
             201
         );
@@ -106,9 +107,10 @@ class UserController extends BaseController
             'lastname' => 'required|string',
             'type' => 'required|in:Writer,Editor',
             'status' => 'required|in:Active,Inactive',
+            'password' => 'required|confirmed',
         ]);
 
-        $user = User::create($request->all());
+        $user = User::create($request->all() + ['password' => Hash::make($request->password)]);
 
         return $this->sendResponse($user, 'User created successfully.', 201);
     }
